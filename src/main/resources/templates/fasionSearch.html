@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/fasion/search}" th:method="post">
+<h1>衣類検索</h1>
+<input type="radio" name="gender" th:value=0 checked>男性
+<input type="radio" name="gender" th:value=1>女性<br>
+<select name="color">
+<option th:value="赤" selected>赤</option>
+<option th:value="白">白</option>
+<option th:value="青">青</option>
+<option th:value="黄">黄</option>
+</select>
+<button>送信</button>
+
+<div th:if="${fasionList!=null}">
+<table th:each="fasion:${fasionList}">
+<tr>
+<td>
+ジャンル:
+</td>
+<td><span th:text="${fasion.genre}"></span></td>
+</tr>
+
+<tr>
+<td>
+サイズ:
+</td>
+<td><span th:text="${fasion.size}"></span></td>
+</tr>
+
+<tr>
+<td>
+価格:
+</td>
+<td><span th:text="${fasion.price}"></span></td>
+</tr>
+
+</table>
+</div>
+
+</form>
+
+</body>
+</html>
