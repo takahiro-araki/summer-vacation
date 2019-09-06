@@ -36,13 +36,11 @@ public class HotelClass {
 	 * @param model　リクエストスコープ
 	 * @return　ホテル情報検索画面
 	 */
-	@RequestMapping("/search")
-	public String searchByLessThanPrice(Integer price ,Model model ) {
-		List<HotelDomain> hotelList=hotelRepository.load(price);
-		model.addAttribute("hotelList",hotelList);
-		return "hotelSearch";
-	}
-	
+	/*
+	 * @RequestMapping("/search") public String searchByLessThanPrice(Integer price
+	 * ,Model model ) { List<HotelDomain> hotelList=hotelRepository.load(price);
+	 * model.addAttribute("hotelList",hotelList); return "hotelSearch"; }
+	 */
 	
 
 }

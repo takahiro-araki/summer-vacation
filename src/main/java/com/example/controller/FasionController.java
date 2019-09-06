@@ -15,28 +15,27 @@ import com.example.reposiory.FasionRepository;
 public class FasionController {
 	@Autowired
 	private FasionRepository fasionRepository;
-	
-	
+
 	/**
 	 * 洋服検索画面を表示する.
-	 * @return　洋服検索画面
+	 * 
+	 * @return 洋服検索画面
 	 */
-	@RequestMapping("")
-	public String index() {
-		return "fasionSearch";
-	}
-	
+	/*
+	 * @RequestMapping("") public String index() { return "fasionSearch" }
+	 */
 	/**
 	 * 性別と色が合致した洋服情報を検索して、表示する.
+	 * 
 	 * @param 性別情報
 	 * @param 色譲歩負
 	 * @param リクエストスコープ
-	 * @return　洋服検索画面
+	 * @return 洋服検索画面
 	 */
 	@RequestMapping("/search")
-	public String searchByColorAndGender(Integer gender,String color  ,Model model) {
-		List<FasionDomain> fasionList=fasionRepository.load(gender, color);
-		model.addAttribute("fasionList",fasionList);
+	public String searchByColorAndGender(Integer gender, String color, Model model) {
+		List<FasionDomain> fasionList = fasionRepository.load(gender, color);
+		model.addAttribute("fasionList", fasionList);
 		return "fasionSearch";
 	}
 
